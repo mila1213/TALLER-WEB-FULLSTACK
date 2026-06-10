@@ -42,6 +42,6 @@ exports.handler = async function(event) {
     if (error) return respuesta(500, { ok:false, error:error.message });
     return respuesta(201, { ok:true, message:"Guardado en Supabase", data });
   }
-
+// Si no es GET ni POST, respondemos con error
   return respuesta(405, { ok:false, error:"Método no permitido" });
 };
